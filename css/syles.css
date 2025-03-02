@@ -1,6 +1,6 @@
 /* === VARIABLES DE COLORES === */
 :root {
-    --color-primario: #13491c;
+    --color-primario: #26aa3c;
     --color-secundario: #22D3EE;
     --color-destacado: #FACC15;
     --color-fondo: #0F172A;
@@ -296,36 +296,54 @@ a:focus {
 }
 
 
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.footer-links a {
+ 
+footer {
+    background-color: var(--color-primario);
     color: var(--color-texto);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: var(--color-secundario);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: var(--color-secundario);
+footer a:hover {
+    color: var(--color-destacado);
 }
 
-.footer-info {
-    text-align: right;
+footer .footer-contenido {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
 }
 
-.footer-info p {
-    margin: 0;
+footer .redes-sociales,
+footer .suscripcion,
+footer .horario,
+footer .contacto {
+    flex: 1 1 200px; /* Flexibilidad para el diseño responsivo */
+    margin: 1rem;
+}
+
+footer .whatsapp-float {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 1000;
+}
+
+footer .whatsapp-float img {
+    width: 60px;
+    height: 60px;
 }
 
 
@@ -577,4 +595,19 @@ li:hover {
 
 .boton-llamativo:hover {
     background-color: #e84118;
+}
+
+
+/* Estilo para el texto de "David Valdes" */
+.textoDavid {
+    font-size: 100rem; /* Tamaño de letra grande */
+    color: rgb(255, 0, 0); /* Color en formato RGB */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+}
+
+
+.textoDavid {
+    font-size: 3rem; /* Tamaño de letra grande */
+    color: rgb(255, 0, 0); /* Color en formato RGB */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
 }
