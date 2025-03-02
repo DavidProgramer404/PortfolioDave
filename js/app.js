@@ -69,3 +69,44 @@ function enviarFormulario(event) {
 // Agregar el evento de envío al formulario
 const formulario = document.querySelector('form');
 formulario.addEventListener('submit', enviarFormulario);
+
+const imagenesProyecto = document.querySelectorAll('.proyecto img');
+
+imagenesProyecto.forEach(imagen => {
+    imagen.addEventListener('click', () => {
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.zIndex = '1000';
+
+        const img = document.createElement('img');
+        img.src = imagen.src;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90%';
+        img.style.borderRadius = '10px';
+
+        const closeModal = document.createElement('span');
+        closeModal.textContent = '✖';
+        closeModal.style.position = 'absolute';
+        closeModal.style.top = '20px';
+        closeModal.style.right = '20px';
+        closeModal.style.fontSize = '2rem';
+        closeModal.style.color = 'white';
+        closeModal.style.cursor = 'pointer';
+
+        closeModal.addEventListener('click', () => {
+            modal.remove();
+        });
+
+        modal.appendChild(img);
+        modal.appendChild(closeModal);
+        document.body.appendChild(modal);
+    });
+});

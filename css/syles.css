@@ -336,7 +336,7 @@ footer .contacto {
 
 footer .whatsapp-float {
     position: fixed;
-    bottom: 100px;
+    bottom: 120px;
     right: 20px;
     z-index: 1000;
 }
@@ -610,4 +610,36 @@ li:hover {
     font-size: 3rem; /* Tamaño de letra grande */
     color: rgb(255, 0, 0); /* Color en formato RGB */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejorar la legibilidad */
+}
+
+
+.formFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos en el eje horizontal */
+    margin-top: 1rem; /* Espacio superior */
+}
+
+.formFooter input[type="email"] {
+    padding: 10px;
+    border: 2px solid var(--color-secundario);
+    border-radius: 5px;
+    width: 80%; /* Ancho del input */
+    max-width: 400px; /* Ancho máximo */
+    margin-bottom: 1rem; /* Espacio inferior */
+    font-size: 1rem; /* Tamaño de fuente */
+}
+
+.formFooter button {
+    padding: 10px 20px;
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.formFooter button:hover {
+    background-color: var(--color-destacado); /* Color al pasar el mouse */
 }
