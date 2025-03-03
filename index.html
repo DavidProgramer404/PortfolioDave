@@ -44,20 +44,6 @@
                     </ul>
                 </div>
             </div>
-        <div id="reloj-digital" style="font-size: 24px; color: #333; text-align: center; margin: 20px;">
-            <span id="hora">00:00:00</span>
-        </div>
-        <script>
-            function actualizarRelojDigital() {
-                const ahora = new Date();
-                const horas = String(ahora.getHours()).padStart(2, '0');
-                const minutos = String(ahora.getMinutes()).padStart(2, '0');
-                const segundos = String(ahora.getSeconds()).padStart(2, '0');
-                document.getElementById('hora').textContent = `${horas}:${minutos}:${segundos}`;
-            }
-            setInterval(actualizarRelojDigital, 1000);
-            actualizarRelojDigital();
-        </script>
         </nav>
     </header>
 
@@ -79,6 +65,20 @@
             <div class="text-center my-4">
                 <img src="./img/otter.gif" alt="Animalito Digital" class="img-fluid" style="max-width: 200px;">
                 <p>¡Mira este adorable animalito digital!</p>
+                <div id="reloj-digital" style="font-size: 24px; color: #333; text-align: center; margin: 20px;">
+                    <span id="hora">00:00:00</span>
+                </div>
+                <script>
+                    function actualizarRelojDigital() {
+                        const ahora = new Date();
+                        const horas = String(ahora.getHours()).padStart(2, '0');
+                        const minutos = String(ahora.getMinutes()).padStart(2, '0');
+                        const segundos = String(ahora.getSeconds()).padStart(2, '0');
+                        document.getElementById('hora').textContent = `${horas}:${minutos}:${segundos}`;
+                    }
+                    setInterval(actualizarRelojDigital, 1000);
+                    actualizarRelojDigital();
+                </script>
             </div>
         </div>
     </section>
