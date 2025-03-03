@@ -3,178 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{ 🛒 'David Valdes' 💻}  - Informático y Analista Programador</title>
-    <link rel="stylesheet" href="style.css">
+    <title>{ 🛒 'David Valdes' 💻} - Informático y Analista Programador</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Fuente personalizada -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="./css/syles.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
+    <!-- Header con Navbar de Bootstrap -->
     <header>
-        <nav class="navbar">
-            <div class="logo">{ DV }</div>
-            <ul class="nav-links">
-                <br>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top py-2">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">{ DV }</a>
+                <div class="text-white text-center" role="alert" style="overflow: hidden; white-space: nowrap; animation: slide 10s linear infinite;">
+                    <span class="marquee-text">¡Novedades! Estamos lanzando nuevos servicios para mejorar tu experiencia. ¡No te lo pierdas!</span>
+                </div>
+                <style>
+                    @keyframes slide {
+                        0% { transform: translateX(50%); }
+                        100% { transform: translateX(-100%); }
+                    }
+                    .marquee-text {
+                        display: inline-block;
+                        padding: 10px 0;
+                    }
+                </style>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
+        <div id="reloj-digital" style="font-size: 24px; color: #333; text-align: center; margin: 20px;">
+            <span id="hora">00:00:00</span>
+        </div>
+        <script>
+            function actualizarRelojDigital() {
+                const ahora = new Date();
+                const horas = String(ahora.getHours()).padStart(2, '0');
+                const minutos = String(ahora.getMinutes()).padStart(2, '0');
+                const segundos = String(ahora.getSeconds()).padStart(2, '0');
+                document.getElementById('hora').textContent = `${horas}:${minutos}:${segundos}`;
+            }
+            setInterval(actualizarRelojDigital, 1000);
+            actualizarRelojDigital();
+        </script>
         </nav>
     </header>
-    
-    
 
-    <section id="hero">
-        <div class="video-fondo">
-            <video autoplay muted loop poster="./video/imagen-de-respaldo.jpg" aria-label="Video de presentación">
+    <!-- Sección Hero -->
+    <section id="hero" class="vh-100 d-flex align-items-center justify-content-center text-center text-white">
+        <div class="video-fondo position-absolute w-100 h-100">
+            <video autoplay muted loop poster="./video/imagen-de-respaldo.jpg" class="w-100 h-100 object-fit-cover">
                 <source src="./video/video.mp4" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>
-            
-            <!-- Contenedor del contenido sobre el video -->
-            <div class="contenido-superpuesto">
-                <hr>
-                <h1><code>print("Hola Mundo 👋🌐")</code></h1>
-                <h1><code>print("My name is:")</code></h1>
-                <h2 class="textoDavid"><code>print(" 👦 David Valdes")</code></h2>
-                <h2><code>console.log("Técnico Informático y Analista Programador")</code></h2>
-                <p>Desarrollo soluciones tecnológicas innovadoras y eficientes para impulsar tu negocio.</p>
-                <hr>
-    
-                <div class="boton-container">
-                    <a href="https://shop-murex-eight.vercel.app/" target="_blank" class="boton-llamativo">
-                        Visita mi página Web
-                    </a>
-                    
+        </div>
+        <div class="contenido-superpuesto position-relative">
+            <h1 class="display-4"><code>print("Hola Mundo👋🌐")</code></h1>
+            <h1 class="display-4"><code>print("My name is:")</code></h1>
+            <h2 class="textoDavid"><code>print(" 👦 David Valdes")</code></h2>
+            <h2 class="h3"><code>console.log("Técnico Informático y Analista Programador")</code></h2>
+            <p class="lead">Desarrollo soluciones tecnológicas innovadoras y eficientes para impulsar tu negocio.</p>
+            <a href="https://shop-murex-eight.vercel.app/" target="_blank" class="btn btn-warning btn-lg">Visita mi página Web</a>
+            <div class="text-center my-4">
+                <img src="./img/otter.gif" alt="Animalito Digital" class="img-fluid" style="max-width: 200px;">
+                <p>¡Mira este adorable animalito digital!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Sobre Mí</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="lead">
+                        Soy un apasionado de la tecnología con experiencia en desarrollo web, análisis de datos y gestión de proyectos tecnológicos.
+                        Me especializo en diseñar y desarrollar soluciones innovadoras y personalizadas que satisfacen las necesidades únicas de mis clientes,
+                        garantizando eficiencia, funcionalidad y excelencia en cada proyecto.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="./img/dave photo.jpg" alt="Foto de perfil" class="img-fluid rounded-circle" style="width: 200px; height: 200px;">
                 </div>
             </div>
         </div>
     </section>
-    
-    
 
-    <section id="sobre-mi">
-        <h2>Sobre Mí</h2>
-        <p>
-            Soy un apasionado de la tecnología con experiencia en desarrollo web, análisis de datos y gestión de proyectos tecnológicos.
-            Me especializo en diseñar y desarrollar soluciones innovadoras y personalizadas que satisfacen las necesidades únicas de mis clientes,
-            garantizando eficiencia, funcionalidad y excelencia en cada proyecto.
-        </p>
-        
-        <img src="./img/dave photo.jpg" alt="Foto de perfil">
+    <!-- Sección Servicios -->
+    <section id="servicios" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Servicios</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Desarrollo Web</li>
+                <li class="list-group-item">Análisis de Datos</li>
+                <li class="list-group-item">Desarrollo de Software a Medida</li>
+                <li class="list-group-item">Consultoría en Tecnología</li>
+                <li class="list-group-item">Gestiín de Proyectos</li>
+                <li class="list-group-item">Soporte Técnico</li>
+            </ul>
+        </div>
     </section>
 
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <ul>
-            <li>Desarrollo Web</li>
-            <li>Análisis de Datos</li>
-            <li>Desarrollo de Software a Medida</li>
-            <li>Consultoría en Tecnología</li>
-            <li>Gestión de Proyectos</li>
-            <li>Soporte Técnico</li>
-        </ul>
-    </section>
-
-    <section id="proyectos">
-        <h2>Mis Proyectos</h2>
-        <p>Aquí puedes ver algunos de los proyectos en los que he trabajado.</p>
-        <div class="portafolio">
-            <div class="proyecto">
-                <img src="./img/01Silent.PNG" alt="Imagen del Proyecto 1">
-                <h3>Proyecto 1</h3>
-                <h3>SILENT HILL 2 REMAKE FAN PAGE</h3>
-                <p>
-                    Este fue uno de mis primeros proyectos, inspirado en la saga Silent Hill 2 Remake, lanzada para diversas plataformas de videojuegos, tanto en consolas como en PC.  
-                    Lo desarrollé con dedicación y esfuerzo, aplicando mis conocimientos básicos en <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.  
-                    Este proyecto no solo me permitió aprender y mejorar mis habilidades técnicas, sino también perfeccionar mi enfoque en la precisión del código para lograr un diseño funcional y atractivo.
-                </p>
-                <a href="https://silenthillproject.netlify.app" target="_blank">Ver Proyecto</a>
-            </div>
-            <div class="proyecto">
-                <img src="./img/01Sushi.PNG" alt="Imagen del Proyecto 2">
-                <h3>Proyecto 2</h3>
-                <h3>Plataforma Web de Sushi</h3>
-                <p>
-                    Este proyecto fue desarrollado para clientes que administran locales de comida japonesa, negocios de comida rápida o ventas de productos. 
-                    Incluye una sección de inventario que permite gestionar información clave, como nombre, código, precio y descripción de los productos, 
-                    optimizando así la organización y el control de su negocio.
-                </p>
-                <a href="https://shiny-frangipane-387f2b.netlify.app" target="_blank">Ver Proyecto</a>
-            </div>
-            <div class="proyecto">
-                <img src="./img/logisticDave.png" alt="Imagen del Proyecto 3">
-                <h3>Proyecto 3</h3>
-                <h3>Plataforma de inventario LogisticDave</h3>
-                <p>
-                    Este proyecto fue desarrollado para ofrecer a futuros clientes una solución digital innovadora que facilite la gestión eficiente de inventarios y brinde acceso organizado a información detallada de productos, optimizando sus procesos operativos y administrativos.
-                </p>
-                
-                <a href="https://logisticdave.netlify.app" target="_blank">Ver Proyecto</a>
+    <!-- Sección Proyectos -->
+    <section id="proyectos" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Mis Proyectos</h2>
+            <p class="text-center mb-5">Aquí puedes ver algunos de los proyectos en los que he trabajado.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./img/01Silent.PNG" class="card-img-top" alt="Imagen del Proyecto 1">
+                        <div class="card-body">
+                            <h3 class="card-title">SILENT HILL 2 REMAKE FAN PAGE</h3>
+                            <p class="card-text">
+                                Este fue uno de mis primeros proyectos, inspirado en la saga Silent Hill 2 Remake, lanzada para diversas plataformas de videojuegos, tanto en consolas como en PC.  
+                                Lo desarrollé con dedicación y esfuerzo, aplicando mis conocimientos básicos en <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.
+                            </p>
+                            <a href="https://silenthillproject.netlify.app" target="_blank" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./img/01Sushi.PNG" class="card-img-top" alt="Imagen del Proyecto 2">
+                        <div class="card-body">
+                            <h3 class="card-title">Plataforma Web de Sushi</h3>
+                            <p class="card-text">
+                                Este proyecto fue desarrollado para clientes que administran locales de comida japonesa, negocios de comida rápida o ventas de productos. 
+                                Incluye una sección de inventario que permite gestionar información clave, como nombre, código, precio y descripción de los productos.
+                            </p>
+                            <a href="https://shiny-frangipane-387f2b.netlify.app" target="_blank" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="./img/logisticDave.png" class="card-img-top" alt="Imagen del Proyecto 3">
+                        <div class="card-body">
+                            <h3 class="card-title">Plataforma de inventario LogisticDave</h3>
+                            <p class="card-text">
+                                Este proyecto fue desarrollado para ofrecer a futuros clientes una solución digital innovadora que facilite la gestión eficiente de inventarios y brinde acceso organizado a información detallada de productos.
+                            </p>
+                            <a href="https://logisticdave.netlify.app" target="_blank" class="btn btn-primary">Ver Proyecto</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form class="">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo electrónico" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-
-    <script src="./js/app.js"></script>
-<!-- Start Generation Here -->
-<footer>
-    <div class="footer-contenido">
-        <div class="redes-sociales">
-            <h3>Síguenos en nuestras redes sociales</h3>
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
-        <div class="suscripcion">
-            <h3>Suscríbete a nuestro boletín</h3>
-            <form class="formFooter">
-                <input type="email" placeholder="Correo electrónico" required>
-                <button type="submit">Suscribirse</button>
+    <!-- Sección Contacto -->
+    <section id="contacto" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contacto</h2>
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Nombre" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                </div>
+                <div class="col-12">
+                    <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
             </form>
         </div>
-        <div class="horario">
-            <h3>Horario de atención</h3>
-            <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-            <p>Sábado: 10:00 AM - 2:00 PM</p>
-        </div>
-        <div class="contacto">
-            <h3>Contacto</h3>
-            <p>Teléfono: <a href="tel:+123456789">+1 234 567 89</a></p>
-            <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+            const modal = new bootstrap.Modal(document.getElementById('modalContacto'));
+            modal.show(); // Muestra el modal
+        });
+
+        // Redirigir al inicio después de cerrar el modal
+        document.getElementById('modalContacto').addEventListener('hidden.bs.modal', function () {
+            window.location.href = '#'; // Cambia '#' por el ID de la sección de inicio si es necesario
+        });
+    </script>
+
+    <div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="modalContactoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalContactoLabel">¡Gracias por tu mensaje!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="whatsapp-float">
-        <a href="https://wa.me/56999442312" target="_blank">
-            <dotlottie-player src="https://lottie.host/e40ce212-3ea9-4f4e-84a6-1393f411ab86/2jko7WMOkY.lottie" background="transparent" speed="1" style="width: 100px; height: 100px; " loop autoplay></dotlottie-player>
-        </a>
-    </div>
-<!-- Start Generation Here -->
-<p>© 2023 Todos los derechos reservados.</p>
-</footer>
-<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-black text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Síguenos en nuestras redes sociales</h3>
+                    <a href="https://facebook.com" target="_blank" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="text-white"><i class="bi bi-instagram"></i></a>
+                </div>
+                <div class="col-md-3">
+                    <h3>Suscríbete a nuestro boletín</h3>
+                    <form class="formFooter">
+                        <input type="email" class="form-control mb-2" placeholder="Correo electrónico" required>
+                        <button type="submit" class="btn btn-warning">Suscribirse</button>
+                    </form>
+                </div>
+                <div class="col-md-3">
+                    <h3>Horario de atención</h3>
+                    <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                    <p>Sábado: 10:00 AM - 2:00 PM</p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Contacto</h3>
+                    <p>Teléfono: <a href="tel:+123456789" class="text-white">+1 234 567 89</a></p>
+                    <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="mb-0">© 2023 Todos los derechos reservados.</p>
+            </div>
+        </div>
+        
+    </footer>
 
-<!-- End Generation Here -->
-<script src="./js/app.js" defer></script>
+    
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
