@@ -18,20 +18,16 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top py-2">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">{ DV }</a>
-                <div class="text-white text-center" role="alert" style="overflow: hidden; white-space: nowrap; animation: slide 10s linear infinite;">
-                    <span class="marquee-text">¡Novedades! Estamos lanzando nuevos servicios para mejorar tu experiencia. ¡No te lo pierdas!</span>
-                </div>
+                <a class="navbar-brand" href="#" style="display: inline-block; animation: mover 10s linear infinite;">{ DV }</a>
                 <style>
-                    @keyframes slide {
-                        0% { transform: translateX(50%); }
-                        100% { transform: translateX(-100%); }
-                    }
-                    .marquee-text {
-                        display: inline-block;
-                        padding: 10px 0;
+                    @keyframes mover {
+                        0% { transform: translateX(0); }
+                        50% { transform: translateX(20px); }
+                        100% { transform: translateX(0); }
                     }
                 </style>
+                </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -55,30 +51,52 @@
                 Tu navegador no soporta el elemento de video.
             </video>
         </div>
+
         <div class="contenido-superpuesto position-relative">
-            <h1 class="display-4"><code>print("Hola Mundo👋🌐")</code></h1>
-            <h1 class="display-4"><code>print("My name is:")</code></h1>
-            <h2 class="textoDavid"><code>print(" 👦 David Valdes")</code></h2>
-            <h2 class="h3"><code>console.log("Técnico Informático y Analista Programador")</code></h2>
-            <p class="lead">Desarrollo soluciones tecnológicas innovadoras y eficientes para impulsar tu negocio.</p>
-            <a href="https://shop-murex-eight.vercel.app/" target="_blank" class="btn btn-warning btn-lg">Visita mi página Web</a>
-            <div class="text-center my-4">
-                <img src="./img/otter.gif" alt="Animalito Digital" class="img-fluid" style="max-width: 200px;">
-                <p>¡Mira este adorable animalito digital!</p>
-                <div id="reloj-digital" style="font-size: 24px; color: #333; text-align: center; margin: 20px;">
-                    <span id="hora">00:00:00</span>
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <!-- Títulos más pequeños -->
+                        <h1 class="display-5"><code>print("Hola Mundo👋🌐")</code></h1>
+                        <h1 class="display-5"><code>print("My name is:")</code></h1>
+                        <h2 class="h4"><code>print(" 👦 David Valdes")</code></h2>
+                        <h2 class="h5"><code>console.log("Técnico Informático y Analista Programador")</code></h2>
+                        <p class="lead small">Desarrollo soluciones tecnológicas innovadoras y eficientes para impulsar tu negocio.</p>
+                        
+                        <!-- Botón más pequeño -->
+                        <a href="https://shop-murex-eight.vercel.app/" target="_blank" class="btn btn-warning btn-md mb-3">Visita mi página Web</a>
+                        
+                        <!-- Animalito Digital y Reloj -->
+                        <div class="text-center my-3">
+                            <img src="./img/otter.gif" alt="Animalito Digital" class="img-fluid" style="max-width: 150px;">
+                            <p class="small">¡Mira este adorable animalito digital!</p>
+                            <p class="small" id="mensaje-clickeame" style="display: none;">¡Toca a la nutria !!</p>
+                            <script>
+                                const nutria = document.querySelector('img[alt="Animalito Digital"]');
+                                const mensaje = document.getElementById('mensaje-clickeame');
+
+                                nutria.addEventListener('mouseover', () => {
+                                    mensaje.style.display = 'block';
+                                });
+
+                                nutria.addEventListener('mouseout', () => {
+                                    mensaje.style.display = 'none';
+                                });
+
+                                nutria.addEventListener('click', () => {
+                                    nutria.style.transition = 'transform 0.5s';
+                                    nutria.style.transform = 'rotate(360deg)';
+                                    setTimeout(() => {
+                                        nutria.style.transform = 'rotate(0deg)';
+                                    }, 500);
+                                });
+                            </script>
+                            <div id="reloj-digital" class="reloj-digital">
+                                <span id="hora">00:00:00</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <script>
-                    function actualizarRelojDigital() {
-                        const ahora = new Date();
-                        const horas = String(ahora.getHours()).padStart(2, '0');
-                        const minutos = String(ahora.getMinutes()).padStart(2, '0');
-                        const segundos = String(ahora.getSeconds()).padStart(2, '0');
-                        document.getElementById('hora').textContent = `${horas}:${minutos}:${segundos}`;
-                    }
-                    setInterval(actualizarRelojDigital, 1000);
-                    actualizarRelojDigital();
-                </script>
             </div>
         </div>
     </section>
@@ -131,6 +149,7 @@
                             <p class="card-text">
                                 Este fue uno de mis primeros proyectos, inspirado en la saga Silent Hill 2 Remake, lanzada para diversas plataformas de videojuegos, tanto en consolas como en PC.  
                                 Lo desarrollé con dedicación y esfuerzo, aplicando mis conocimientos básicos en <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>.
+                            <strong>Descripción:</strong> Este proyecto es una fan page dedicada a Silent Hill 2, donde los usuarios pueden explorar contenido relacionado con el juego, incluyendo noticias, imágenes y foros de discusión. La página está diseñada para ser visualmente atractiva y fácil de navegar, utilizando tecnologías web modernas para ofrecer una experiencia de usuario fluida.
                             </p>
                             <a href="https://silenthillproject.netlify.app" target="_blank" class="btn btn-primary">Ver Proyecto</a>
                         </div>
@@ -144,14 +163,15 @@
                             <p class="card-text">
                                 Este proyecto fue desarrollado para clientes que administran locales de comida japonesa, negocios de comida rápida o ventas de productos. 
                                 Incluye una sección de inventario que permite gestionar información clave, como nombre, código, precio y descripción de los productos.
+                            <strong>Descripción:</strong> Esta plataforma web de sushi permite a los usuarios realizar pedidos en línea, gestionar su menú y llevar un control de inventario. Además, cuenta con una interfaz intuitiva que facilita la navegación y mejora la experiencia del cliente. Los administradores pueden actualizar fácilmente la información de los productos y recibir notificaciones sobre el estado de los pedidos, lo que optimiza la operación del negocio.
                             </p>
                             <a href="https://shiny-frangipane-387f2b.netlify.app" target="_blank" class="btn btn-primary">Ver Proyecto</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 ">
                     <div class="card h-100">
-                        <img src="./img/logisticDave.png" class="card-img-top" alt="Imagen del Proyecto 3">
+                        <img src="./img/logisticDave.png" class="card-img-top" alt="Imagen del Proyecto 3" style="width: auto; height: auto;">
                         <div class="card-body">
                             <h3 class="card-title">Plataforma de inventario LogisticDave</h3>
                             <p class="card-text">
@@ -213,6 +233,29 @@
             </div>
         </div>
     </div>
+
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    </a>
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 2px 2px 10px #888888;
+            z-index: 100;
+        }
+        .whatsapp-float img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
     </section>
 
     <!-- Footer -->
@@ -244,7 +287,7 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <p class="mb-0">© 2023 Todos los derechos reservados.</p>
+                <p class="mb-0">© 2025 Todos los derechos reservados. Desarrollado por <a href="#" class="text-white">🛒DaveStoreDigital💻  - > 👨‍💻 </a></p>
             </div>
         </div>
         

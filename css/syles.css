@@ -22,6 +22,8 @@ h1, h2, h3 {
     100% { background-position: 100% 50%; }
 }
 
+
+
 #hero {
     background: rgba(0, 0, 0, 0.5);
 }
@@ -54,3 +56,74 @@ footer a {
 footer a:hover {
     color: #e0a800;
 }
+
+
+/* Estilos para el contenido superpuesto */
+.contenido-superpuesto {
+    padding: 20px 0; /* Espaciado interno reducido */
+}
+
+/* Títulos más pequeños */
+.display-5 {
+    font-size: 1.75rem; /* Tamaño reducido para h1 */
+}
+
+.h4 {
+    font-size: 1.5rem; /* Tamaño reducido para h2 */
+}
+
+.h5 {
+    font-size: 1.25rem; /* Tamaño reducido para h3 */
+}
+
+.lead.small {
+    font-size: 1rem; /* Tamaño reducido para el párrafo */
+}
+
+/* Botón más pequeño */
+.btn-md {
+    padding: 0.5rem 1rem; /* Tamaño reducido para el botón */
+    font-size: 0.9rem;
+}
+
+/* Estilos para el reloj digital */
+.reloj-digital {
+    font-size: 20px; /* Tamaño base del reloj */
+    color: #585757;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .display-5 {
+        font-size: 1.5rem; /* Tamaño más pequeño en móviles */
+    }
+
+    .h4 {
+        font-size: 1.25rem;
+    }
+
+    .h5 {
+        font-size: 1rem;
+    }
+
+    .lead.small {
+        font-size: 0.9rem;
+    }
+
+    .btn-md {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .reloj-digital {
+        font-size: 16px; /* Tamaño más pequeño en móviles */
+    }
+
+    img.img-fluid {
+        max-width: 120px; /* Imagen más pequeña en móviles */
+    }
+}
+
+
