@@ -7,19 +7,32 @@ body {
 h1, h2, h3 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .navbar-brand {
-    color: rgb(255, 0, 0); /* Color rojo */
-    font-weight: bold; /* Texto en negrita */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra de texto */
-    background: linear-gradient(90deg, rgb(255, 0, 0), rgb(255, 127, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211)); /* Gradiente arcoíris */
-    -webkit-background-clip: text; /* Clip de fondo para el texto */
-    -webkit-text-fill-color: transparent; /* Relleno de texto transparente */
-    animation: rainbow 5s linear infinite; /* Animación de arcoíris */
+    color: rgb(255, 0, 0);
+    /* Color rojo */
+    font-weight: bold;
+    /* Texto en negrita */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    /* Sombra de texto */
+    background: linear-gradient(90deg, rgb(255, 0, 0), rgb(255, 127, 0), rgb(255, 255, 0), rgb(0, 255, 0), rgb(0, 0, 255), rgb(75, 0, 130), rgb(148, 0, 211));
+    /* Gradiente arcoíris */
+    -webkit-background-clip: text;
+    /* Clip de fondo para el texto */
+    -webkit-text-fill-color: transparent;
+    /* Relleno de texto transparente */
+    animation: rainbow 5s linear infinite;
+    /* Animación de arcoíris */
 }
 
 @keyframes rainbow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 
@@ -60,35 +73,42 @@ footer a:hover {
 
 /* Estilos para el contenido superpuesto */
 .contenido-superpuesto {
-    padding: 20px 0; /* Espaciado interno reducido */
+    padding: 20px 0;
+    /* Espaciado interno reducido */
 }
 
 /* Títulos más pequeños */
 .display-5 {
-    font-size: 1.75rem; /* Tamaño reducido para h1 */
+    font-size: 1.75rem;
+    /* Tamaño reducido para h1 */
 }
 
 .h4 {
-    font-size: 1.5rem; /* Tamaño reducido para h2 */
+    font-size: 1.5rem;
+    /* Tamaño reducido para h2 */
 }
 
 .h5 {
-    font-size: 1.25rem; /* Tamaño reducido para h3 */
+    font-size: 1.25rem;
+    /* Tamaño reducido para h3 */
 }
 
 .lead.small {
-    font-size: 1rem; /* Tamaño reducido para el párrafo */
+    font-size: 1rem;
+    /* Tamaño reducido para el párrafo */
 }
 
 /* Botón más pequeño */
 .btn-md {
-    padding: 0.5rem 1rem; /* Tamaño reducido para el botón */
+    padding: 0.5rem 1rem;
+    /* Tamaño reducido para el botón */
     font-size: 0.9rem;
 }
 
 /* Estilos para el reloj digital */
 .reloj-digital {
-    font-size: 20px; /* Tamaño base del reloj */
+    font-size: 20px;
+    /* Tamaño base del reloj */
     color: #585757;
     text-align: center;
     margin: 10px 0;
@@ -97,7 +117,8 @@ footer a:hover {
 /* Ajustes responsivos */
 @media (max-width: 768px) {
     .display-5 {
-        font-size: 1.5rem; /* Tamaño más pequeño en móviles */
+        font-size: 1.5rem;
+        /* Tamaño más pequeño en móviles */
     }
 
     .h4 {
@@ -118,11 +139,13 @@ footer a:hover {
     }
 
     .reloj-digital {
-        font-size: 16px; /* Tamaño más pequeño en móviles */
+        font-size: 16px;
+        /* Tamaño más pequeño en móviles */
     }
 
     img.img-fluid {
-        max-width: 120px; /* Imagen más pequeña en móviles */
+        max-width: 120px;
+        /* Imagen más pequeña en móviles */
     }
 }
 
@@ -144,9 +167,11 @@ footer a:hover {
     0% {
         background-position: 100% 0;
     }
+
     50% {
         background-position: 0 100%;
     }
+
     100% {
         background-position: 100% 0;
     }
@@ -164,3 +189,43 @@ footer a:hover {
     transform: translateX(-50%);
 }
 
+
+/* WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px #888888;
+    z-index: 100;
+}
+
+.whatsapp-float img {
+    width: 70%;
+    height: 100%;
+}
+
+/* playlist texto */
+
+.retro-text:hover {
+    text-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 30px rgba(0, 255, 255, 1), 0 0 40px rgba(255, 255, 0, 1);
+    /* Resaltar el efecto al pasar el cursor */
+}
+
+/* con movimiento retro  */
+.retro-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    background: linear-gradient(90deg, rgba(255, 0, 255, 1) 0%, rgba(0, 255, 255, 1) 50%, rgba(255, 255, 0, 1) 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(255, 255, 0, 0.8);
+    transition: all 0.3s ease;
+    animation: flicker 1.5s infinite alternate; /* Agregar animación de parpadeo */
+}
